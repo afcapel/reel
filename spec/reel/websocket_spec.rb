@@ -9,6 +9,7 @@ describe Reel::WebSocket do
   it "performs websocket handshakes" do
     with_socket_pair do |client, peer|
       connection = Reel::Connection.new(peer)
+
       client << handshake.to_data
 
       request = connection.request
